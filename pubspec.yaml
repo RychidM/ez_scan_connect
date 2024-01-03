@@ -1,7 +1,7 @@
 name: ez_scan_connect
 version: 1.0.0+1
 publish_to: none
-description: 'An application designed to streamline the dining experience by enabling restaurant waiters to view and manage customer orders efficiently. '
+description: 'An application designed to streamline the dining experience by enabling restaurant waiters to view and manage customer orders efficiently.'
 environment: 
   sdk: '>=3.2.3 <4.0.0'
 

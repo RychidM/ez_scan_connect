@@ -48,7 +48,6 @@ app.*.map.json
 .env.prodd
 .env
 .vscode
-/lib/objectbox.g.dart
 
 pubspec.lock
 ```

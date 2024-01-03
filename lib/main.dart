@@ -9,7 +9,7 @@ void main() {
     GetMaterialApp(
       title: "EzScan Connect",
       debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.INITIAL,
+      initialRoute: AppPages.initial,
       getPages: AppPages.routes,
     ),
   );
