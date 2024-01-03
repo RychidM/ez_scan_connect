@@ -1,16 +1,25 @@
-# ez_scan_connect
+# Ez Scan Connect
 
-A new Flutter project.
+## Description
+This is a Flutter-based mobile application specifically designed for restaurant waiters. The app provides an efficient and user-friendly interface for viewing and managing customer orders, thereby streamlining the dining experience.
 
-## Getting Started
+## Features
+- Real-time order tracking: Waiters can view customer orders in real-time, ensuring prompt and accurate service.
+- Order management: Provides functionalities for order confirmation, modification, and completion.
+- User-friendly interface: The app boasts a clean and intuitive interface, making it easy for waiters to navigate and manage orders.
 
-This project is a starting point for a Flutter application.
+## Installation
+This project is a Flutter application. To set up and run the project:
 
-A few resources to get you started if this is your first Flutter project:
+1. Ensure that you have the Flutter SDK installed on your machine.
+2. Clone this repository.
+3. Navigate to the project directory and run `flutter pub get` to install the necessary dependencies.
+4. Run `flutter run` to start the application.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Contributing
+As this is a private repository, contributions are currently not accepted. For any issues, questions, or suggestions, please contact the repository owner.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+This project is licensed under [insert license here].
+
+
