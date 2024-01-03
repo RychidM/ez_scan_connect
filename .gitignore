@@ -50,5 +50,5 @@ app.*.map.json
 .vscode
 /lib/objectbox.g.dart
 
-.pubspec.lock
+pubspec.lock
 ```
