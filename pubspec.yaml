@@ -11,12 +11,62 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_screenutil: ^5.9.0
+  gap: ^3.0.1
+  nb_utils: ^6.0.7
+  basic_utils: ^5.5.4
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter
 
+flutter_launcher_icons:
+  image_path_android: assets/launcher_icon/ic_launcher.png
+  image_path_ios: assets/launcher_icon/appstore.png
+  ios: true
+  android: true    
+
 flutter: 
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+   - family: Matter
+     fonts:
+       - asset: assets/fonts/matter_font/Matter-Light.ttf
+         weight: 300
+       - asset: assets/fonts/matter_font/Matter-LightItalic.ttf
+         style: italic
+         weight: 300
+       - asset: assets/fonts/matter_font/Matter-Regular.ttf
+         weight: 400
+       - asset: assets/fonts/matter_font/Matter-RegularItalic.ttf
+         style: italic
+         weight: 400
+       - asset: assets/fonts/matter_font/Matter-Medium.ttf
+         weight: 500
+       - asset: assets/fonts/matter_font/Matter-MediumItalic.ttf
+         style: italic
+         weight: 500
+       - asset: assets/fonts/matter_font/Matter-SemiBold.ttf
+         weight: 600
+       - asset: assets/fonts/matter_font/Matter-SemiBoldItalic.ttf
+         style: italic
+         weight: 600
+       - asset: assets/fonts/matter_font/Matter-Bold.ttf
+         weight: 700
+       - asset: assets/fonts/matter_font/Matter-BoldItalic.ttf
+         weight: 700
+         style: italic
+       - asset: assets/fonts/matter_font/Matter-Heavy.ttf
+         weight: 800
+       - asset: assets/fonts/matter_font/Matter-HeavyItalic.ttf
+         weight: 800
+         style: italic
 
