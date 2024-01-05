@@ -21,4 +21,7 @@ class EzAppColors {
   static const ezDarkModeCardBgColor = Color(0xFF131313);
   static const ezBlue = Color(0xFF2A86FF);
   static const ezTransparentBlue = Color(0x332A86FF);
+  static const ezScaffoldDarkModeColor = Color(0xFF262626);
+  static const ezScaffoldColor = Color(0xFFE6E6E6);
+  static const ezTextFieldBorderColor = Color(0xFFE6E6E6);
 }
