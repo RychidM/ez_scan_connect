@@ -8,6 +8,7 @@ class Assets {
   static const String iconsLogoWithTextWhite = 'assets/icons/logo_with_text_white.svg';
   static const String iconsPasswordIcon = 'assets/icons/password_icon.svg';
   static const String iconsProfileIcon = 'assets/icons/profile_icon.svg';
+  static const String iconsHome = 'assets/icons/Home.svg';
   static const String iconsSettings = 'assets/icons/Settings.svg';
   static const String iconsSlideIcon = 'assets/icons/slide_icon.svg';
   static const String imagesEzScanLogo = 'assets/images/ez_scan_logo.png';

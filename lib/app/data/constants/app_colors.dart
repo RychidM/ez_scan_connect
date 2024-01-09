@@ -24,4 +24,7 @@ class EzAppColors {
   static const ezScaffoldDarkModeColor = Color(0xFF262626);
   static const ezScaffoldColor = Color(0xFFE6E6E6);
   static const ezTextFieldBorderColor = Color(0xFFE6E6E6);
+  static const ezNavBarWhiteColor = Color(0x1ED5D5D5);
+  static const ezPrimaryTextAlt = Color(0xFF383838);
+  static const ezDarkModePrimaryTextAlt = Color(0xFFC9C9C9);
 }

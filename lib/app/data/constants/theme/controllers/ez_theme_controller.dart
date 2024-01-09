@@ -16,6 +16,8 @@ class EzThemeService extends GetxService with WidgetsBindingObserver {
         WidgetsBinding.instance.platformDispatcher.platformBrightness;
     ezThemeState.themeMode =
         ezThemeBrightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light;
+    ezThemeState.isDarkMode = ezThemeState.themeMode == ThemeMode.dark;    
+
   }
 
   @override

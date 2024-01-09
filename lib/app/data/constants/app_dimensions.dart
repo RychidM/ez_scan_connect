@@ -21,8 +21,10 @@ class EzDimensions {
   static const ezDimens70 = 70.0;
   static const ezDimens75 = 75.0;
   static const ezDimens90 = 90.0;
+  static const ezDimens130 = 130.0;
   static const ezDimens135 = 135.0;
   static const ezDimens197 = 197.0;
+  static const ezDimens205 = 205.0;
   static const ezDimens260 = 260.0;
 
 //---------------- Spacing ----------------//  
@@ -38,6 +40,7 @@ class EzDimensions {
   static const ezSpacing18 = 18.0;
   static const ezSpacing20 = 20.0;
   static const ezSpacing25 = 25.0;
+  static const ezSpacing28 = 28.0;
   static const ezSpacing30 = 30.0;
   static const ezSpacing35 = 35.0;
   static const ezSpacing40 = 40.0;

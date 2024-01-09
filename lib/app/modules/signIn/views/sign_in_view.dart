@@ -2,8 +2,10 @@ import 'package:ez_scan_connect/app/data/constants/app_colors.dart';
 import 'package:ez_scan_connect/app/data/constants/app_dimensions.dart';
 import 'package:ez_scan_connect/app/data/constants/theme/app_theme.dart';
 import 'package:ez_scan_connect/app/data/constants/theme/controllers/ez_theme_controller.dart';
+import 'package:ez_scan_connect/app/routes/app_pages.dart';
 import 'package:ez_scan_connect/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,6 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../data/shared/widgets/ez_button.dart';
+import '../../../data/shared/widgets/ez_textfield.dart';
 import '../controllers/sign_in_controller.dart';
 
 class SignInView extends GetView<SignInController> {
@@ -32,8 +35,7 @@ class SignInView extends GetView<SignInController> {
                   width: EzDimensions.ezDimens135.h,
                   decoration: BoxDecoration(
                     color: Colors.transparent,
-                    boxShadow: themeService.ezThemeState.themeMode ==
-                            ThemeMode.dark
+                    boxShadow: themeService.ezThemeState.isDarkMode
                         ? [
                             BoxShadow(
                               color: EzAppColors.ezPurple.withOpacity(0.3),
@@ -63,8 +65,7 @@ class SignInView extends GetView<SignInController> {
                   width: EzDimensions.ezDimens135.h,
                   decoration: BoxDecoration(
                     color: Colors.transparent,
-                    boxShadow: themeService.ezThemeState.themeMode ==
-                            ThemeMode.dark
+                    boxShadow: themeService.ezThemeState.isDarkMode
                         ? [
                             BoxShadow(
                               color: EzAppColors.ezPurple.withOpacity(0.3),
@@ -102,22 +103,23 @@ class SignInView extends GetView<SignInController> {
                     child: Stack(
                       children: [
                         Image.asset(Assets.imagesWaiterIllustration),
-                        Align(
-                          alignment: Alignment.bottomCenter,
+                        Positioned(
+                          bottom: -10.h,
+                          left: 0,
+                          right: 0,
                           child: GetX<EzThemeService>(
                             init: EzThemeService(),
                             initState: (_) {},
                             builder: (themeMode) {
                               return Container(
                                 width: double.infinity,
-                                height: EzDimensions.ezDimens60.h,
+                                height: EzDimensions.ezDimens70.h,
                                 decoration: BoxDecoration(
                                     color: Colors.transparent,
                                     boxShadow: [
                                       BoxShadow(
                                         color:
-                                            themeMode.ezThemeState.themeMode ==
-                                                    ThemeMode.light
+                                            !themeMode.ezThemeState.isDarkMode
                                                 ? EzAppColors.ezWhite
                                                 : EzAppColors.ezBlack,
                                         blurRadius: 10.r,
@@ -133,7 +135,7 @@ class SignInView extends GetView<SignInController> {
                   Gap(EzDimensions.ezSpacing15.h),
                   GetX<EzThemeService>(
                     builder: (themeService) => SvgPicture.asset(
-                        themeService.ezThemeState.themeMode == ThemeMode.dark
+                        themeService.ezThemeState.isDarkMode
                             ? Assets.iconsLogoWithTextWhite
                             : Assets.iconsLogoWithTextBlack),
                   ),
@@ -168,7 +170,9 @@ class SignInView extends GetView<SignInController> {
                             ),
                             Gap(EzDimensions.ezSpacing12.h),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                HapticFeedback.lightImpact();
+                              },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -193,12 +197,12 @@ class SignInView extends GetView<SignInController> {
                   ),
                   Gap(EzDimensions.ezSpacing20.h),
                   EzRoundedButton(
-                    onTap: () {},
+                    onTap: () => Get.offNamed(Routes.home),
                     label: "Login",
                   ),
-                  Gap(EzDimensions.ezSpacing30.h),
+                  Gap(EzDimensions.ezSpacing15.h),
                   Text(
-                    "Group 1 inc",
+                    "Group 1 inc 2024",
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall
@@ -210,79 +214,6 @@ class SignInView extends GetView<SignInController> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class EzRoundedTextField extends StatelessWidget {
-  final String label;
-  final String? suffixIconUrl;
-  final TextInputType textInputType;
-  final TextInputAction textInputAction;
-  final bool obscureText;
-  final bool enableSuggestions;
-  final String? Function(String?) validator;
-  const EzRoundedTextField({
-    super.key,
-    this.label = "Email",
-    this.suffixIconUrl,
-    this.textInputType = TextInputType.emailAddress,
-    this.textInputAction = TextInputAction.next,
-    this.obscureText = false,
-    this.enableSuggestions = true,
-    required this.validator,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontSize: EzDimensions.ezFont18,
-              ),
-        ),
-        Gap(EzDimensions.ezSpacing12.h),
-        TextFormField(
-          keyboardType: textInputType,
-          textInputAction: textInputAction,
-          obscureText: obscureText,
-          enableSuggestions: enableSuggestions,
-          decoration: InputDecoration(
-            suffixIcon: suffixIconUrl != null
-                ? Container(
-                    padding: EdgeInsets.all(EzDimensions.ezSpacing15.h),
-                    height: EzDimensions.ezSpacing25.h,
-                    width: EzDimensions.ezSpacing25.h,
-                    child: SvgPicture.asset(
-                      suffixIconUrl!,
-                    ),
-                  )
-                : null,
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: EzDimensions.ezSpacing20.w,
-              vertical: EzDimensions.ezSpacing20.h,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(EzDimensions.ezSpacing25.r),
-              borderSide: BorderSide(
-                color: EzAppColors.ezTextFieldBorderColor,
-                width: 1.11.w,
-              ),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(EzDimensions.ezSpacing25.r),
-              borderSide: BorderSide(
-                color: EzAppColors.ezTextFieldBorderColor,
-                width: 1.11.w,
-              ),
-            ),
-          ),
-          validator: validator,
-        ),
-      ],
     );
   }
 }
