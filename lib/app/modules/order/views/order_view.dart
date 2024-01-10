@@ -18,6 +18,7 @@ class OrderView extends GetView<OrderController> {
     OrderBinding binding = OrderBinding();
     binding.dependencies();
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

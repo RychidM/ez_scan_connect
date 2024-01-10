@@ -46,5 +46,6 @@ class EzDimensions {
   static const ezSpacing40 = 40.0;
   static const ezSpacing50 = 50.0;
   static const ezSpacing70 = 70.0;
+  static const ezSpacing77 = 77.0;
 
 }
