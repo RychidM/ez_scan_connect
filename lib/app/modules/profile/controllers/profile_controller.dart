@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 
-class OrderDetailsController extends GetxController {
-  //TODO: Implement OrderDetailsController
+class ProfileController extends GetxController {
+  //TODO: Implement ProfileController
 
   final count = 0.obs;
   @override
   void onInit() {
-    print("OrderDetailsController onInit");
+    print("ProfileController onInit");
     super.onInit();
   }
 
